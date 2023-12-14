@@ -1,0 +1,8 @@
+{
+    "users": [
+      { "id": 1, "email": "test@test.com", "password": "1234" }
+    ],
+    "games": [
+      { "id": 1, "name": "League Of Legends", "description": "jeuuuu blabla", "picture" : "https://www.my-esport.fr/wp-content/uploads/2016/10/lol.png" }
+    ]
+  }
