@@ -1,13 +1,11 @@
-import React from 'react'
+import { Link } from "react-router-dom";
 
-export default function Nav() {
-  return (
-    <nav>
-        <ul>
-            <li>Accueil</li>
-            <li>Jeux du tournoi</li>
-            <li>Déconnexion</li>
-        </ul>
-    </nav>
-  )
+const Nav = () => {
+    return <nav>
+        <Link to={ '/' }>Home</Link>
+        <Link to={ '/ListeJeuxPage' }>Contact</Link>
+        {/* <Link to={ '/product/1' }>Product 1</Link> */}
+    </nav>;
 }
+
+export default Nav;

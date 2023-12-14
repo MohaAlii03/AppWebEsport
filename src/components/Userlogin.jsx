@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function AnimatedForms() {
+function Userlogin() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleSwitch = index => {
@@ -61,4 +61,4 @@ function AnimatedForms() {
   );
 }
 
-export default AnimatedForms;
+export default Userlogin;
