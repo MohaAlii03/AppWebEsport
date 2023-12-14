@@ -1,6 +1,5 @@
 import React from 'react';
-import PagePresentation from './components/PagePresentation';
-import Login from './Login';
+import Login from './components/Login';
 
 function App() {
   return (
