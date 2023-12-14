@@ -1,12 +1,10 @@
-// src/App.js
 import React from 'react';
-import Login from './Login';
+import PagePresentation from './components/PagePresentation';
 
 function App() {
   return (
-    <div>
-      <h1>Tournoi E-sport</h1>
-      <Login />
+    <div className="App">
+      <PagePresentation />
     </div>
   );
 }
