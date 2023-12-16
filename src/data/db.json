@@ -1,9 +1,35 @@
 {
-    "users": [
-      { "id": 1, "email": "test@test.com", "password": "1234" }
-    ],
-    "games": [
-      { "id": 1, "name": "League Of Legends", "description": "jeuuuu blabla", "picture" : "https://www.my-esport.fr/wp-content/uploads/2016/10/lol.png" },
-      { "id": 2, "name": "Valorant", "description": "jeuuuu blabla2", "picture" : "https://seeklogo.com/images/V/valorant-logo-FAB2CA0E55-seeklogo.com.png" }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "email": "test@test.com",
+      "password": "1234"
+    },
+    {
+      "nom": "dfzeoifoiaza",
+      "email": "oiaofafa@gmail.coml",
+      "motDePasse": "azertyu",
+      "id": 2
+    },
+    {
+      "nom": "Hachi Romaissaa",
+      "email": "maissaa.hachi@gmail.com",
+      "motDePasse": "ROMAISSA",
+      "id": 3
+    },
+    {
+      "nom": "fzafazaz",
+      "email": "fafazfazfza@gmail.com",
+      "motDePasse": "zfazfazfa",
+      "id": 4
+    }
+  ],
+  "games": [
+    {
+      "id": 1,
+      "name": "League Of Legends",
+      "description": "jeu blabla",
+      "picture": "https://www.my-esport.fr/wp-content/uploads/2016/10/lol.png"
+    }
+  ]
+}
