@@ -22,6 +22,18 @@
       "email": "fafazfazfza@gmail.com",
       "motDePasse": "zfazfazfa",
       "id": 4
+    },
+    {
+      "nom": "Mohamed",
+      "email": "voortekx@gmail.com",
+      "motDePasse": "efzfc",
+      "id": 5
+    },
+    {
+      "nom": "Mohamed",
+      "email": "ou.mehdi2003@gmail.com",
+      "motDePasse": "fzfezf",
+      "id": 6
     }
   ],
   "games": [
@@ -37,6 +49,5 @@
       "description": "jeu blabla",
       "picture": "https://upload.wikimedia.org/wikipedia/commons/c/c3/Rocket_League_logo.svg"
     }
-    
   ]
 }

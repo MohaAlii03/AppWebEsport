@@ -13,13 +13,13 @@ import router from './services/router';
 const App= () => {
 
 
-  return  <Router>
-      <Routes>
-        <RouterProvider router={ router } />
-        <Route path="/" element={<LoginPage />} />
-        <Route path="/home" element={<HomePage />} />
-      </Routes>
-    </Router>;
+   return<RouterProvider router={ router } />  // <Router>
+  //      <Routes>
+        
+  //       <Route path="/" element={<LoginPage />} />
+  //       <Route path="/home" element={<HomePage />} />
+  //     </Routes>
+  //  </Router>;
 
 };
 
