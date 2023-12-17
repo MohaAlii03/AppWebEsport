@@ -1,20 +1,49 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { enregistrerUtilisateur } from './api'; // Importez la fonction depuis api.js
+import { verifierUtilisateur } from './api'; // Assurez-vous d'importer la nouvelle fonction
+
 
 function Userlogin() {
   const [activeIndex, setActiveIndex] = useState(0);
-  
+  const navigate = useNavigate();
   const [nom, setNom] = useState('');
   const [email, setEmail] = useState('');
   const [motDePasse, setMotDePasse] = useState('');
+  const [acceptTerms, setAcceptTerms] = useState(false); // Nouveau state pour la case à cocher
+  
+  const handleLogin = async (e) => {
+    e.preventDefault();
+  
+  console.log("Email:", email); // Afficher l'email saisi
+  console.log("Mot de Passe:", motDePasse); // Afficher le mot de passe saisi
+
+    try {
+      const result = await verifierUtilisateur(email, motDePasse);
+      if (result) {
+        navigate('/home');
+      } else {
+        alert('Identifiants incorrects');
+      }
+    } catch (error) {
+      console.error('Erreur lors de la connexion:', error);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const userData = { nom, email, motDePasse };
 
+    if (!acceptTerms) {
+      alert("Veuillez accepter les conditions d'utilisation.");
+      return;
+    }
+    const userData = { nom, email, motDePasse };
+    
     try {
         const utilisateurEnregistre = await enregistrerUtilisateur(userData);
         console.log('Utilisateur enregistré avec succès:', utilisateurEnregistre);
+        navigate('/home'); // Redirection vers HomePage après la connexion
+
         // Autres actions après l'enregistrement réussi...
     } catch (error) {
         console.error('Erreur lors de l\'enregistrement de l\'utilisateur:', error);
@@ -36,7 +65,7 @@ function Userlogin() {
             Login
             <span className="underline"></span>
           </button>
-          <form className={`form form-login ${activeIndex === 0 ? 'is-active' : ''}`}>
+          <form className={`form form-login ${activeIndex === 0 ? 'is-active' : ''}`} onSubmit={handleLogin}>
             <fieldset>
               <legend>Please, enter your email and password for login.</legend>
               <div className="input-block">
@@ -72,6 +101,16 @@ function Userlogin() {
         <label htmlFor="signup-password">Password</label>
         <input id="signup-password" type="password" value={motDePasse} onChange={e => setMotDePasse(e.target.value)} required />
       </div>
+      <div className="input-block">
+        <input
+          id="terms-checkbox"
+          type="checkbox"
+          checked={acceptTerms}
+          onChange={e => setAcceptTerms(e.target.checked)}
+        />
+        <label htmlFor="terms-checkbox">J'accepte les conditions d'utilisation</label>
+      </div>
+
       {/* Vous pouvez ajouter ici un champ de confirmation de mot de passe si nécessaire */}
       <button type="submit" className="btn-signup">Continue</button>
     </fieldset>

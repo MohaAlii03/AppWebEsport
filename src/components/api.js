@@ -21,3 +21,24 @@ export const enregistrerUtilisateur = async (userData) => {
         throw error;
     }
 };
+export async function verifierUtilisateur(email, motDePasse) {
+    try {
+      // Remplacez 'http://localhost:3000/utilisateurs' par l'URL de votre API
+      const response = await fetch('http://localhost:3000/users');
+      const utilisateurs = await response.json();
+  
+      // Trouver l'utilisateur avec l'email donné
+      const utilisateurTrouve = utilisateurs.find(utilisateur => utilisateur.email === email);
+  
+      // Vérifier si l'utilisateur existe et si le mot de passe est correct
+      if (utilisateurTrouve && utilisateurTrouve.motDePasse === motDePasse) {
+        return utilisateurTrouve;
+      } else {
+        return null;
+      }
+    } catch (error) {
+      console.error('Erreur lors de la vérification des identifiants:', error);
+      throw error;
+    }
+  }
+  
