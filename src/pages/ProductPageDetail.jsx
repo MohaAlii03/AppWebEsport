@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { getGameById } from '../services/api';
-import PagePresentation from '../components/PagePresentation';
 import DetailsJeu from '../components/DetailsJeu';
 import data from "../data/db.json";
 
-export default function ProductPage() {
+export default function ProductPageDetail() {
 
   const [jeux, setJeux] = useState(data.games);
 
@@ -16,19 +15,14 @@ export default function ProductPage() {
     getGameById().then((data) => setJeux(data.results));
   }, []);
   
-  const jeu = data.games.find((game) => game.id === parseInt(id)); // Récupérez les détails du jeu basé sur l'ID
-
-  if (!jeu) {
-    return <p>Le jeu n'existe pas.</p>; // Gérez le cas où le jeu n'est pas trouvé
-  }
 
   return (
     <>
-    <h2>Liste de jeux</h2>
+    <h2>Détail du jeu</h2>
     {
       jeux.map((jeu) => {
         return (
-          <PagePresentation
+          <DetailsJeu
             key={crypto.randomUUID()}
             // id = {jeu.id}
             title = {jeu.name}
@@ -40,3 +34,5 @@ export default function ProductPage() {
   </>
   )
 }
+
+

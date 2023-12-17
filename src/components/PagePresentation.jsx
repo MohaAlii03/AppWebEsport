@@ -1,13 +1,13 @@
 import React from 'react'
 
-export default function PagePresentation({ id, title, desc, picture }) {
+export default function PagePresentation({title, desc, picture }) {
   return (
     <div>
-      <p>id : {id}</p>
-      <p>Titre : {title}</p>
-      <p>Description : {desc}</p>
+      {/* <p>id : {id}</p> */}
+      <p>- {title}</p>
+      {/* <p>Description : {desc}</p> */}
       <p>
-        <img src={picture} alt="" />
+        {/* <img src={picture} alt="" /> */}
       </p>
     </div>
   )
